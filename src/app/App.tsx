@@ -1,18 +1,8 @@
-import axios from 'axios';
-import React, {useEffect} from 'react';
+import React from 'react';
 import logo from '../assets/logo.svg';
 import './App.css';
 
 function App() {
-
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_TMDB_BASE_URL + '/configuration/languages')
-      .then((response) => {
-        console.log(response)
-      })
-  })
-
   return (
     <div className="App">
       <header className="App-header">
