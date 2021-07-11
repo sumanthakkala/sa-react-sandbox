@@ -22,8 +22,16 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test \"--watchAll=false\" \"--coverage\"",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix --max-warnings 0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts"
+    ]
   },
   "eslintConfig": {
     "extends": [
