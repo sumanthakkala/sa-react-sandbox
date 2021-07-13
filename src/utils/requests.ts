@@ -1,4 +1,16 @@
-const requests = {
+
+export interface Request {
+  url: string
+  params: {
+    [key: string]: string
+  }
+}
+
+interface Requests {
+  [key: string]: Request
+}
+
+const requests: Requests = {
   trending: {
     url: '/trending/all/week',
     params: {
@@ -21,49 +33,49 @@ const requests = {
     url: '/discover/tv',
     params: {
       language: 'en-US',
-      with_networks: 213,
+      with_networks: '213',
     },
   },
   movieOriginals: {
     url: '/discover/movie',
     params: {
       language: 'en-US',
-      with_networks: 213,
+      with_networks: '213',
     },
   },
   actionMovies: {
     url: '/discover/movie',
     params: {
       language: 'en-US',
-      with_genres: 28,
+      with_genres: '28',
     },
   },
   comedyMovies: {
     url: '/discover/movie',
     params: {
       language: 'en-US',
-      with_genres: 35,
+      with_genres: '35',
     },
   },
   horrorMovies: {
     url: '/discover/movie',
     params: {
       language: 'en-US',
-      with_genres: 27,
+      with_genres: '27',
     },
   },
   romanceMovies: {
     url: '/discover/movie',
     params: {
       language: 'en-US',
-      with_genres: 10749,
+      with_genres: '10749',
     },
   },
   documentaryMovies: {
     url: '/discover/movie',
     params: {
       language: 'en-US',
-      with_genres: 99,
+      with_genres: '99',
     },
   },
 }

@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from '../assets/logo.svg';
-import './App.css';
+import React from 'react'
+import Layout from 'layout'
+import NetflixPage from 'pages/Netflix'
+import './styles.scss'
+import Toolbar from '@material-ui/core/Toolbar';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Sumanth Akkala React Sandbox</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="root_app">
+      <Layout />
+      <Toolbar />
+        <NetflixPage />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
