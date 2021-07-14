@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -6,6 +6,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import Slide from '@material-ui/core/Slide'
 import SettingsIcon from '@material-ui/icons/Settings'
 import IconButton from '@material-ui/core/IconButton'
+import RightDrawer from '../RightDrawer'
 import './styles.scss'
 interface Props {
   /**
@@ -35,9 +36,14 @@ function HideOnScroll(props: Props) {
 
 const Header = () => {
 
-    
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+    const onDrawerClose = () => {
+      setIsSettingsOpen(false);
+    }
 
     return (
+      <>
       <HideOnScroll>
         <AppBar className='app_bar'>
           <Toolbar>
@@ -46,7 +52,7 @@ const Header = () => {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={() => console.log('settings')}
+              onClick={() => setIsSettingsOpen(!isSettingsOpen)}
               color="inherit"
             >
               <SettingsIcon />
@@ -54,6 +60,8 @@ const Header = () => {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
+      <RightDrawer isOpen = {isSettingsOpen} onClose = {onDrawerClose}/>
+      </>
     )
 }
 
